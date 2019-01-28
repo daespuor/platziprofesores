@@ -1,0 +1,11 @@
+
+    <h3 mat-subheader>Redes sociales</h3>
+
+    <mat-card *ngFor="let socialMedia of socialMedias">
+        <mat-card-header>
+          <img mat-card-avatar
+            src="{{socialMediasApi}}/{{socialMedia.idSocialMedia}}/picture"/>
+          <mat-card-title >{{socialMedia.name}}</mat-card-title>
+        </mat-card-header>
+    </mat-card> 
+    <button mat-mini-fab color="primary" class="add_button" routerLink='socialMedia/new'>+</button>       

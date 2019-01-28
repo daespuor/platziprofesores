@@ -1,0 +1,19 @@
+<mat-card class="example-card" *ngIf="!teacherLoading">
+    <mat-card-header>
+      <img mat-card-avatar  src="{{teachersApi}}/{{teacher.idTeacher}}/picture" class="icon"/>
+      <mat-card-title>{{teacher.name}}</mat-card-title>
+      <mat-card-subtitle   *ngFor="let teacherSocialMedia of teacher.teacherSocialMedias">
+        <img src="{{socialMediaApi}}/{{teacherSocialMedia.socialMedia.idSocialMedia}}/picture" class="social-media-icon" />
+         {{teacherSocialMedia.nickname}}
+      </mat-card-subtitle>
+      <mat-card-subtitle>
+        <button mat-flat-button class="add_socialMedia_button" color="primary" routerLink='socialMedias'>
+          Agregar Red Social
+        </button>
+        <button mat-flat-button class="update_button" color="primary" routerLink='update'>
+          Editar
+        </button>
+      </mat-card-subtitle>
+      </mat-card-header>
+  </mat-card>
+  

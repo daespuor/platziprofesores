@@ -1,0 +1,1 @@
+export const apiUrl='https://platziprofesoresdani.herokuapp.com/v1';

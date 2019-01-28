@@ -1,0 +1,19 @@
+
+    <h3 mat-subheader>Profesores</h3>
+
+      <mat-card *ngFor="let teacher of teachers">
+          <mat-card-header>
+            <img mat-card-avatar
+              src="{{teachersApi}}/{{teacher.idTeacher}}/picture"/>
+            <mat-card-title routerLink='teacher/{{teacher.idTeacher}}'>{{teacher.name}}</mat-card-title>
+            <mat-card-subtitle>Tiene {{teacher.courses.length}} cursos</mat-card-subtitle>
+            <mat-card-subtitle>
+              <span   *ngFor="let teacherSocialMedia of teacher.teacherSocialMedias">
+                  {{teacherSocialMedia.nickname}}
+              </span>
+            </mat-card-subtitle>
+          </mat-card-header>
+      </mat-card> 
+      <button mat-mini-fab color="primary" class="add_button" routerLink='teacher/new'>+</button>       
+  
+ 

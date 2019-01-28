@@ -1,0 +1,19 @@
+<form [formGroup]="teacherForm" (ngSubmit)="onSubmit()">
+    <mat-form-field >
+      <input matInput 
+            placeholder="Nombre" 
+            formControlName=name>
+    </mat-form-field>
+
+        <input
+            type="file"
+            id="file"
+            placeholder="File"
+            (change)="onFileChange($event)"
+            #fileInput 
+            formControlName="file">
+    <img *ngIf="teacherImage" id="thumbnail" title="thumb" src={{teacherImage}} class="thumbnail"/>
+    <p></p>   
+    <button mat-raised-button color="primary" type="submit" [disabled]="!teacherForm.get('name').valid">Agregar</button>
+</form>
+  

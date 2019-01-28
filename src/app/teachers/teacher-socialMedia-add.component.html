@@ -1,0 +1,15 @@
+<mat-list>
+        <h3 mat-subheader>Redes Sociales</h3>
+        <mat-list-item *ngFor="let socialMedia of socialMedias">
+          <img src="{{socialMediaApi}}/{{socialMedia.idSocialMedia}}/picture" mat-list-icon />
+          <h4 mat-line>{{socialMedia.name}}</h4>
+          <input mat-line matInput [formControl]="nicknameMap[socialMedia.idSocialMedia]" 
+          placeholder="Ingrese su Nickname">
+          <small mat-line *ngIf="nicknameMap[socialMedia.idSocialMedia].status=='INVALID'"
+                class="error-message">
+              Nickname invalido
+          </small>
+        </mat-list-item>
+        <button mat-flat-button color="primary" (click)="updateTeacherSocialMedia()">Actualizar</button>
+</mat-list>
+      
