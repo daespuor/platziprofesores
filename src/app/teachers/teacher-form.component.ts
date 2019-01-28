@@ -35,7 +35,9 @@ export class TeacherFormComponent implements OnInit{
     constructor(private teacherService:TeacherService, 
     public snackBar:MatSnackBar,
     private router:Router,
-    private routes:ActivatedRoute){}
+    private routes:ActivatedRoute){
+        
+    }
 
     private loadTeacherInfo(){
         this.routes.params.subscribe((params)=>{
